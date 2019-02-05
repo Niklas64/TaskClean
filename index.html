@@ -1,0 +1,49 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <title>Price calculator</title>
+    <script src="src/price-calculator.js"></script>
+
+    <!--When I read the instructions I’m not sure what I’m supposed to accomplish.
+    I would say the code is fairly easy to read and understand but I have added some comment and changed name on some variables.
+    Regarding extendable functionality I’m not sure what you mean, extend with more price settings? If so the switch statements
+    can easily be extended without rewrite what there is today. If more and more different products come in I would suggest to
+    add new price-calculator.js and maybe finally have a master.js to call them. Also different product names to keep track.
+    The testing with runner.html works fine and I have made some comments in price-calculator.specs but I have no test result file. I have been evaluated
+    the code with .Net and could of course have set up a unit test there.-->
+
+
+</head>
+<body>
+    <h3>Please check also the console for output.</h3>
+    <script src="src/price-calculator.js"></script>
+    <script>
+        var calculatedPrice = 0;
+        var userType = 0;     // userType, 0 = normal: all users that is not a company user, 1 = company: a company user
+        var productType = 0;  // productType, 0 = new product in the product line, 1 = old product an existing product in the product line
+        var price = 100;      // Set the product price
+        var publishedDate = new Date(); // For new products in line.
+
+
+        try {
+            calculatedPrice = calculatePrice(userType, productType, price, publishedDate);
+        } catch (ex) {
+            console.log(ex);
+        }
+
+        console.log('Calculated price:', calculatedPrice);
+
+    </script>
+
+    <p id="calculatedPrice"></p>
+
+    <script>
+       // var publishedDate = new Date();      // For new products in line
+        //calculatedPrice = calculatePrice(1, 0, 200, publishedDate);
+        document.getElementById("calculatedPrice").innerHTML = "Calculated price: " + calculatedPrice;
+    </script>
+
+
+
+</body>
+</html>
