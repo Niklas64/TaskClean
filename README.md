@@ -10,4 +10,6 @@ easily be extended without rewrite what there is today. If more and more differe
 price-calculator.js and maybe finally have a master.js to call them. Also different product names to keep track.
 
 The testing with runner.html works fine and I have made some comments in price-calculator.specs but I have no test result file. 
-I have been evaluated the code with .Net and could of course have set up a unit test there.  
+I have been evaluated the code with .Net and could of course have set up a unit test there.
+
+I would personaly use ASP.Net Core 2.x and Azure devOpt, start a project with React Redux.
